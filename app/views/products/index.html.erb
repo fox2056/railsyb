@@ -1,0 +1,91 @@
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="panel">
+        <h1>Лист продуктов</h1>
+      </div>
+    </div>
+  </div>
+   
+  <div class="row">
+  
+     
+    <div class="large-3 columns ">
+      <div class="panel">
+        
+          <h5>Cумма товара:</h5>
+
+          <h6>$<%= @products.sum(:price)  %></h6>
+          <h6><%= @products.sum(:price)*13.7  %> грн.</h6>
+
+          <h5>Количество наименований:</h5>
+          <h6><%= @products.count %> шт.</h6>
+        <h5><%= link_to 'New Product', new_product_path %></h5>
+     
+      </div>
+    </div>
+    
+     
+     
+    <div class="large-6 columns">
+ 
+      <% @products.each do |product| %> 
+      <div class="row">
+        <div class="large-2 columns small-3"></div>
+        <div class="large-10 columns">
+        <h5><a href='<%= product.title %>'>Поставщик</a></h5>
+          <p><img src="<%= product.image_url %>"></p>
+          <h6>Цена: $<%= product.price %></h6>
+          <ul class="inline-list">
+            <li>      <h6 class="subheader"><%= link_to 'Show', product %></h6></li>
+            <li>      <h6 class="subheader"><%= link_to 'Edit', edit_product_path(product) %></h6></li>
+            <li>      <h6 class="subheader"><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></h6></li>
+          </ul>
+ 
+        </div>
+      </div>
+       
+ 
+      <hr/>
+      <% end %>
+      
+    </div>
+ 
+     
+     
+    <aside class="large-3 columns hide-for-small">
+     
+           
+        
+      <p><img src="http://placehold.it/300x440&text=[ad]"/></p>
+    </aside>
+ 
+  </div>
+ 
+ 
+   
+ 
+  <footer class="row">
+    <div class="large-12 columns">
+      <hr/>
+      <div class="row">
+        <div class="large-5 columns">
+          <p>© Copyright no one at all. Go to town.</p>
+        </div>
+        <div class="large-7 columns">
+          <ul class="inline-list right">
+            <li><a href="#">Section 1</a></li>
+            <li><a href="#">Section 2</a></li>
+            <li><a href="#">Section 3</a></li>
+            <li><a href="#">Section 4</a></li>
+            <li><a href="#">Section 5</a></li>
+            <li><a href="#">Section 6</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+             
+ 
+ 
+     
+ 
