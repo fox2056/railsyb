@@ -9,23 +9,7 @@
  
    
  
-        <div class="large-4 small-12 columns">
- 
-          <img src="http://placehold.it/500x500&text=Logo">
- 
-          <div class="hide-for-small panel">
-            <h3>Header</h3>
-            <h5 class="subheader">Risus ligula, aliquam nec fermentum vitae, sollicitudin eget urna. Donec dignissim nibh fermentum odio ornare sagittis.
-            </h5>
-          </div>
- 
-          <a href="#">
-          <div class="panel callout radius">
-            <h6>99  items in your cart</h6>
-          </div>
-          </a>
- 
-        </div>
+
  
      
  
@@ -44,7 +28,8 @@
               <div class="panel">
                 <h5><a href='<%= product.title %>'>Поставщик</a></h5>
                 <h6 class="subheader">$<%= product.price %></h6>
-                <%= button_to 'B корзину', line_items_path(product_id: product), {:class => "button [radius round]" }  %>
+                <%= button_to 'Add to Cart', line_items_path(product_id:product),
+            remote: true  %>
                 
               </div>
             </div>

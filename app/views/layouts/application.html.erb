@@ -15,8 +15,19 @@
       <%= render 'layouts/navigation' %>
     </header>
     <main role="main">
+            <div id="cart">
+                <% if @cart.line_items.empty? %>
+                    
+                <% end %>
+              <%= render @cart %>
+
+             </div>
+       
+
        <%= render 'layouts/messages' %>
        <%= yield %>
+
+
     </main>
   </body>
 </html>
